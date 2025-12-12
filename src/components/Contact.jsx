@@ -9,10 +9,52 @@ const Contact = () => {
         message: ''
     });
 
+    // Email address for receiving contact form submissions
+    const businessEmail = "sivasaiglobalsolutions@gmail.com";
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Form submission logic will be added later
-        alert('Thank you for your message! We will get back to you soon.');
+
+        // Get service label
+        const serviceLabels = {
+            'cranes': 'Cranes for Hire',
+            'mechanical': 'Mechanical Maintenance',
+            'crane-services': 'Crane Services',
+            'hydraulic': 'Hydraulic Maintenance',
+            'custom': 'Custom Equipment Solutions'
+        };
+        const serviceText = formData.service ? serviceLabels[formData.service] : 'Not specified';
+
+        // Create email subject
+        const subject = `New Inquiry from ${formData.fullName} - ${serviceText}`;
+
+        // Create email body with form data
+        const body = `
+New Contact Form Submission
+============================
+
+Name: ${formData.fullName}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Service Interest: ${serviceText}
+
+Message:
+${formData.message}
+
+============================
+Sent from Siva Sai Global Solutions Website
+        `.trim();
+
+        // Create mailto link
+        const mailtoLink = `mailto:${businessEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        // Open email client
+        window.location.href = mailtoLink;
+
+        // Show confirmation
+        alert('Opening your email client... Please send the email to complete your inquiry.');
+
+        // Reset form
         setFormData({
             fullName: '',
             email: '',
