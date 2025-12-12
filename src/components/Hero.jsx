@@ -51,39 +51,143 @@ const Hero = () => {
             {/* Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/80"></div>
 
-            <div className="container relative z-10 py-32">
+            <div className="container relative z-10 py-20">
                 <div className="text-center animate-fade-in">
-                    {/* Main Heading */}
-                    <h1 className="text-6xl md:text-7xl lg:text-8xl font-extrabold mb-6 animate-slide-up drop-shadow-2xl">
-                        SIVA SAI GLOBAL SOLUTIONS
+                    {/* SIVA SAI - Main Title */}
+                    <h1
+                        className="font-extrabold mb-0 animate-slide-up tracking-wider"
+                        style={{
+                            fontSize: 'clamp(3.5rem, 12vw, 9rem)',
+                            fontFamily: "'Poppins', sans-serif",
+                            fontWeight: 900,
+                            color: '#F5A623',
+                            textShadow: `
+                                3px 3px 0px #8B5A00,
+                                6px 6px 0px #5D3A00,
+                                9px 9px 15px rgba(0,0,0,0.5),
+                                0 0 40px rgba(245, 166, 35, 0.4)
+                            `,
+                            letterSpacing: '0.02em',
+                            lineHeight: 1.1,
+                            WebkitTextStroke: '1px #D4880F'
+                        }}
+                    >
+                        SIVA SAI
                     </h1>
 
+                    {/* GLOBAL SOLUTIONS - Subtitle */}
+                    <h2
+                        className="font-bold mb-6 tracking-widest"
+                        style={{
+                            fontSize: 'clamp(1.2rem, 4vw, 3.5rem)',
+                            fontFamily: "'Poppins', sans-serif",
+                            fontWeight: 700,
+                            color: '#F5A623',
+                            textShadow: `
+                                2px 2px 0px #8B5A00,
+                                4px 4px 0px #5D3A00,
+                                6px 6px 10px rgba(0,0,0,0.4),
+                                0 0 30px rgba(245, 166, 35, 0.3)
+                            `,
+                            letterSpacing: '0.2em',
+                            lineHeight: 1.2
+                        }}
+                    >
+                        GLOBAL SOLUTIONS
+                    </h2>
+
+                    {/* Decorative White Lines */}
+                    <div className="flex justify-center items-center gap-6 md:gap-12 mb-10 mt-4">
+                        {/* Left Lines */}
+                        <div className="flex flex-col gap-1.5 items-end">
+                            <div
+                                className="rounded-full"
+                                style={{
+                                    width: 'clamp(50px, 12vw, 100px)',
+                                    height: '4px',
+                                    background: '#ffffff',
+                                    boxShadow: '0 0 8px rgba(255,255,255,0.6)'
+                                }}
+                            />
+                            <div
+                                className="rounded-full"
+                                style={{
+                                    width: 'clamp(70px, 16vw, 130px)',
+                                    height: '4px',
+                                    background: '#ffffff',
+                                    boxShadow: '0 0 8px rgba(255,255,255,0.6)'
+                                }}
+                            />
+                        </div>
+
+                        {/* Right Lines */}
+                        <div className="flex flex-col gap-1.5 items-start">
+                            <div
+                                className="rounded-full"
+                                style={{
+                                    width: 'clamp(50px, 12vw, 100px)',
+                                    height: '4px',
+                                    background: '#ffffff',
+                                    boxShadow: '0 0 8px rgba(255,255,255,0.6)'
+                                }}
+                            />
+                            <div
+                                className="rounded-full"
+                                style={{
+                                    width: 'clamp(70px, 16vw, 130px)',
+                                    height: '4px',
+                                    background: '#ffffff',
+                                    boxShadow: '0 0 8px rgba(255,255,255,0.6)'
+                                }}
+                            />
+                        </div>
+                    </div>
+
                     {/* Tagline */}
-                    <p className="text-xl md:text-2xl text-gray-100 mb-12 max-w-3xl mx-auto drop-shadow-lg">
+                    <p className="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto tracking-wide drop-shadow-lg">
                         Professional Lifting Equipment & Mechanical Maintenance Services
                     </p>
 
                     {/* CTA Buttons */}
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                        <button onClick={() => scrollToSection('services')} className="btn btn-primary">
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                        <button
+                            onClick={() => scrollToSection('services')}
+                            className="btn btn-primary"
+                            style={{
+                                background: 'linear-gradient(135deg, #F5A623 0%, #D4880F 100%)',
+                                color: '#1a1612',
+                                fontWeight: 700
+                            }}
+                        >
                             Our Services
                         </button>
-                        <button onClick={() => scrollToSection('contact')} className="btn btn-secondary">
+                        <button
+                            onClick={() => scrollToSection('contact')}
+                            className="btn btn-secondary"
+                            style={{
+                                borderColor: '#F5A623',
+                                color: '#F5A623'
+                            }}
+                        >
                             Get in Touch
                         </button>
                     </div>
 
-
                     {/* Image Navigation Dots */}
-                    <div className="flex justify-center gap-2 mt-8">
+                    <div className="flex justify-center gap-2 mt-6">
                         {backgroundImages.map((_, index) => (
                             <button
                                 key={index}
                                 onClick={() => setCurrentImageIndex(index)}
                                 className={`w-3 h-3 rounded-full transition-all duration-300 ${currentImageIndex === index
-                                    ? 'bg-primary-500 w-8'
-                                    : 'bg-white/50 hover:bg-white/80'
+                                    ? 'w-8'
+                                    : 'hover:bg-white/80'
                                     }`}
+                                style={{
+                                    background: currentImageIndex === index
+                                        ? 'linear-gradient(135deg, #F5A623 0%, #D4880F 100%)'
+                                        : 'rgba(255,255,255,0.5)'
+                                }}
                                 aria-label={`Go to image ${index + 1}`}
                             />
                         ))}
