@@ -75,8 +75,8 @@ Sent from Siva Sai Global Solutions Website
         {
             icon: '📱',
             title: 'Phone',
-            value: '9617373999',
-            link: 'tel:9617373999'
+            value: '+91 9908617723 / 9617373999',
+            link: 'tel:+919908617723'
         },
         {
             icon: '✉',
@@ -85,15 +85,15 @@ Sent from Siva Sai Global Solutions Website
             link: 'mailto:sivasaiglobalsolutions@gmail.com'
         },
         {
-            icon: '🕐',
-            title: 'Business Hours',
-            value: '24/7 Service - 365 Days',
+            icon: '📍',
+            title: 'Office Address',
+            value: 'Flat No.110, Anjanadri - D block, Suvarna Srinivasam Apartments, Tungalam, Autonagar, Visakhapatnam - 530012',
             link: null
         },
         {
-            icon: '📍',
-            title: 'Address',
-            value: 'Available upon request',
+            icon: '🕐',
+            title: 'Business Hours',
+            value: '24/7 Service - 365 Days',
             link: null
         }
     ];

@@ -98,6 +98,10 @@ const Footer = () => {
                                 <span className="text-xl">📱</span>
                                 <div>
                                     <div className="text-gray-500 text-xs">Phone</div>
+                                    <a href="tel:+919908617723" className="text-gray-400 hover:text-primary-500 transition-colors">
+                                        +91 9908617723
+                                    </a>
+                                    <span className="text-gray-500"> / </span>
                                     <a href="tel:9617373999" className="text-gray-400 hover:text-primary-500 transition-colors">
                                         9617373999
                                     </a>
@@ -110,6 +114,18 @@ const Footer = () => {
                                     <a href="mailto:sivasaiglobalsolutions@gmail.com" className="text-gray-400 hover:text-primary-500 transition-colors break-all">
                                         sivasaiglobalsolutions@gmail.com
                                     </a>
+                                </div>
+                            </li>
+                            <li className="flex items-start space-x-2 text-sm">
+                                <span className="text-xl">📍</span>
+                                <div>
+                                    <div className="text-gray-500 text-xs">Office</div>
+                                    <div className="text-gray-400">
+                                        Flat No.110, Anjanadri - D block,<br />
+                                        Suvarna Srinivasam Apartments,<br />
+                                        Tungalam, Autonagar,<br />
+                                        Visakhapatnam - 530012
+                                    </div>
                                 </div>
                             </li>
                             <li className="flex items-start space-x-2 text-sm">
